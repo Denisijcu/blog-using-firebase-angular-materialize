@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+
+<!--SideBar-->
+
+<app-sidebar></app-sidebar>
+
+<!--Banner-->
+<div class="row">
+  <h1 class="col s12 center text-blue" *ngIf="!isLoading">Open Blog</h1>
+</div>
+
+<!-- Loader Spinner
+<div class="row">
+  <div class="col s12 center">
+    <app-loader *ngIf="isLoading"></app-loader>
+  </div>
+</div>
+-->
+
+<!-- Section: Slider-->
+
+<app-slider></app-slider>
+
+
+
+<app-actionbtn class="actionBtn"></app-actionbtn>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,31 @@
+<ul id="slide-out" class="sidenav teal">
+  <li>
+    <div class="user-view">
+      <div class="background">
+        <img src="assets/images/blog.png" width="100" />
+      </div>
+      <a [routerLink]="['/']"
+        ><img class="circle" src="assets/images/pen.jfif"
+      /></a>
+      <a [routerLink]="['/']"><span class="black-text name">John Doe</span></a>
+      <a [routerLink]="['/']"
+        ><span class="black-text email">dslijcu@gmail.com</span></a
+      >
+    </div>
+  </li>
+  <li>
+    <a [routerLink]="['/posts']"><i class="material-icons">hearing</i>Posts</a>
+  </li>
+  <li><a [routerLink]="['/posts']">Last Posts</a></li>
+  <li><div class="divider"></div></li>
+  <li><a [routerLink]="['/add']" class="subheader">Publish your Post</a></li>
+  <li><a [routerLink]="['/about']">About Us</a></li>
+  <li>
+    <a class="waves-effect" [routerLink]="['/about']"
+      ><i class="material-icons">email</i>Contact Us</a
+    >
+  </li>
+</ul>
+<a [routerLink]="['/']" data-target="slide-out" class="sidenav-trigger"
+  ><i class="material-icons">menu</i></a
+>

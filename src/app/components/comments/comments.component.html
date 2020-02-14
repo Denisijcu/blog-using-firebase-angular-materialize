@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col s12">
+    <ul
+      class="collection with-header circle-link"
+      *ngFor="let com of commentService.commentsArray; index"
+    >
+      <li class="collection-item">
+        <div class="row">
+          <div class="col s1">
+            <img class="circle-avatar" src="/assets/images/avatar.png" alt="" />
+          </div>
+        </div>
+        <div class="row">
+
+              <div class="col s4">
+                {{ com.user }}
+              </div>
+              <div class="col s4"></div>
+              <div class="col s4">
+                <em> {{ com.comment_at | date }} </em>
+              </div>
+    
+         
+        </div>
+
+        <div class="row">
+          <div class="col s1"></div>
+          <div class="col s10">
+            <p class="justify">{{ com.comment }}</p>
+          </div>
+          <div class="col s1"></div>
+        </div>
+        <br />
+
+        <div class="row">
+          <div class="col s6"></div> 
+          <div class="col s2">
+            <i
+              class="material-icons green-text comment "
+              (click)="onLike(com, com.id)"  
+              >thumb_up</i
+            >
+            {{ com.like }} 
+          </div>
+          <div class="col s2">
+            <i
+              class="material-icons black-text"
+              (click)="onDisLike(com, com.id)"  
+              >thumb_down</i
+            >
+            {{ com.dislike }}
+          </div>
+          <div class="col s2">
+            <i
+              class="material-icons red-text"
+              (click)="onDelete(com.id)"
+              >delete</i
+            >
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+

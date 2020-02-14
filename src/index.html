@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Myblog</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
+    ></script>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+    href="https://fonts.googleapis.com/css?family=Lobster"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+ 
+  </head>
+  <body>
+    <app-root></app-root>
+
+  <!--Import jQuery before materialize.js-->
+<script
+type="text/javascript"
+src="https://code.jquery.com/jquery-3.2.1.min.js"
+></script>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
+<script>
+$(document).ready(function() {
+  $(".loader").fadeIn();
+  $(".sidenav").sidenav();
+  $(".fixed-action-btn").floatingActionButton();
+  // Init Slider
+  $(".slider").slider({
+    indicators: false,
+    height: 300,
+    transition: 500,
+    interval: 6000
+  });
+
+  // Hide Sections
+  $(".section").hide();
+
+  setTimeout(() => {
+    // Hide preloader
+    $(".loader").fadeOut();
+    // Show sections
+    $(".section").fadeIn();
+  }, 1000);
+});
+</script>
+  </body>
+</html>

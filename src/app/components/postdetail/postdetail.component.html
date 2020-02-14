@@ -1,0 +1,116 @@
+<!-- Section: Posts-->
+<div class="container">
+  <div class="col s12" *ngIf="postService.post != undefined">
+    <app-loader *ngIf="postService.post == undefined"></app-loader>
+    <ul class="collection with-header">
+      <div class="col s12">
+        <li class="collection-item">
+          <img class="col s12" [src]="postService.post.url" width="100%" />
+        </li>
+        <li class="collection-header black-text center">
+          <h4>{{ postService.post.title }}</h4>
+        </li>
+        <br />
+        <div class="col s12" style="margin-right: 20px;">
+          <em class="collection-item"
+            >Posted by: {{ postService.post.user }}
+            <span class="right"> {{ postService.post.posted | date }}</span></em
+          >
+        </div>
+
+        <li class="collection-item">
+          <div class="row">
+            <div class="col s6">
+           
+             
+               <div class="col s3 left">
+                <i class="small material-icons" (click)="onLike()">thumb_up </i>
+                {{ postService.post.like }} 
+               </div>
+               <div class="col s3 left">
+                <i class="small material-icons" (click)="ondisLike()">thumb_down </i>
+                {{ postService.post.dislike }} 
+               </div>
+             
+             
+              <div class="col s3 left">
+                <i class="small material-icons"> chat_bubble_outline</i>
+                {{ postService.post.comments }}
+              </div>
+              <div class="col s3">
+                <i
+                  class="material-icons red-text  comment"
+                  (click)="onDelete(postService.post.id)"
+                  >delete</i
+                >
+              </div>
+            </div>
+
+          
+          </div>
+        </li>
+        <li class="collection-item">
+          <p>{{ postService.post.content }}</p>
+          <br />
+          <br />
+        </li>
+      </div>
+    </ul>
+  </div>
+
+  <div class="row">
+    <div class="col s12">
+      <div class="row">
+        <form #commentForm="ngForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <textarea
+              name="comment"
+              [(ngModel)]="comments"
+              id="comment"
+              cols="30"
+              rows="10"
+              placeholder="Comment here ..."
+              required
+              minlength="10"
+              #comment="ngModel"
+            ></textarea>
+            <input
+              type="submit"
+              [disabled]="commentForm.invalid"
+              class="waves-light btn"
+              value="Submit"
+            />
+            <div
+              *ngIf="comment.invalid && (comment.dirty || comment.touched)"
+              class="alert alert-danger"
+            >
+              <div *ngIf="comment.errors.required">
+                <em>Comment is required. </em>
+              </div>
+              <div *ngIf="comment.errors.minlength">
+                  Comment must be at least 10 characters long.
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    
+      <app-comments  PostId = {{id}}  ></app-comments>
+    
+    
+
+
+    <hr />
+    <div class="row">
+      <a (click)="onBack()" class="waves-effect waves-light black btn"
+        ><i class="material-icons left">arrow_back</i>Back to Posts</a
+      >
+    </div>
+    <div class="row">
+      <br />
+      <br />
+    </div>
+  </div>
+</div>

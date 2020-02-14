@@ -1,0 +1,12 @@
+.btn-share {
+    cursor: pointer;
+}
+.soc-media {
+    display: flex;
+    flex-direction: unset;
+    min-width: 4rem;
+    min-height: 4rem;
+    background-color: transparent;
+    color: black;
+
+}
